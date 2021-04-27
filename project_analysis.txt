@@ -1,0 +1,34 @@
+Final Project:
+
+Tasks:
+ - Write a python program that fetches movie reviews for the top 50 movies from 3 major websites: IMDB, Metacritics, and Rotten Tomatoes.
+ - Store the data in a comma separated file and in SQLite database
+ - Compare the review style across the 3 websites by calculating the similarity score between the keywords used in the reviews of these 3 websites.
+ - Compare the top 50 movies that are considered top rated across the 3 websites by calculating the similarity score between the genres of movies.
+
+
+ Process:
+ Step 1: Web Scraping, Download movie title, genre and reviews from the 3 given websites.
+     - IMDB: Top rated movies
+     - Rotten Tomatoes: BEST MOVIES OF ALL TIME
+     - Metacritics: Movies of All Time
+Step 2: Store the downloaded data into a CSV file. Use this CSV file to load the same data in an sqlite database
+Step 3: Pre-process and clean data and create vocabulary:
+      - Remove special characters and extra spaces
+      - Lowercase all text
+      - create a wordlist and a vocabulary from the movie reviews
+      - Remove the stop words
+
+Step 4: Use word dictionary to find  the top 50 used words on each site, merge this list and create a unique list of words to be the word_attributes.
+Step 5: Use this word_attributes list to create movie review vectors for each movie. and calculate cosine similarity between each website (Task 1 complete!)
+Step 6: Create a vocabulary from the genre details of each movie for each website
+Step 7: create a list of unique genres and use this list to create genre vectors for each movie
+Step 8: Calculate cosine similarity between each movie using genre vectors. (Task 2 complete!)
+---------------------------------------------------------------------------------------------------
+
+Cosine similarity is used to measure how similar are the sample sets in terms of content and not of meaning. where 0 is not similar 1 is the same
+
+
+Cosine similarity is a metric used to measure how similar the documents are irrespective of their size. Mathematically, it measures the cosine of the angle between two vectors projected in a multi-dimensional space. The cosine similarity is advantageous because even if the two similar documents are far apart by the Euclidean distance (due to the size of the document), chances are they may still be oriented closer together. The smaller the angle, higher the cosine similarity.
+
+In our case we can see that the cosine similarity of 
